@@ -80,6 +80,18 @@ public class MenuPrincipal extends JFrame {
             }
         });
         
+        btnRutas.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (grafoSistema.getProteinas().esVacia()) {
+                    JOptionPane.showMessageDialog(null, "Carga datos primero.");
+                    return;
+            }
+            VentanaRutas v = new VentanaRutas(grafoSistema);
+            v.setVisible(true);
+            }
+        });
+        
     }
 
     public static void main(String[] args) {

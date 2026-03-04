@@ -49,4 +49,28 @@ public class Grafo {
         pOrigen.agregarInteraccion(interaccionIda);
         pDestino.agregarInteraccion(interaccionVuelta);
     }
+    
+    public void eliminarProteina(String nombre) {
+        for (int i = 0; i < proteinas.getTamaño(); i++) {
+            if (proteinas.obtener(i).getNombre().equalsIgnoreCase(nombre)) {
+                proteinas.eliminar(i);
+                break;
+            }
+        }
+    }
+
+    public void eliminarInteraccion(String origen, String destino) {
+        for (int i = 0; i < proteinas.getTamaño(); i++) {
+            Proteina p = proteinas.obtener(i);
+            if (p.getNombre().equalsIgnoreCase(origen)) {
+                Lista<Interaccion> adyacentes = p.getInteracciones();
+                for (int j = 0; j < adyacentes.getTamaño(); j++) {
+                    if (adyacentes.obtener(j).getDestino().getNombre().equalsIgnoreCase(destino)) {
+                        adyacentes.eliminar(j);
+                        return;
+                    }
+                }
+            }
+        }
+    }
 }

@@ -42,4 +42,25 @@ public class Lista<T> {
     public int getTamaño() {
         return tamaño;
     }
+    
+    public void eliminar(int indice) {
+        if (indice < 0 || indice >= tamaño || cabeza == null) {
+            return;
+        }
+
+        if (indice == 0) {
+            cabeza = cabeza.getSiguiente();
+        } 
+        else {
+            NodoLista<T> auxiliar = cabeza;
+            for (int i = 0; i < indice - 1; i++) {
+                auxiliar = auxiliar.getSiguiente();
+            }
+            if (auxiliar.getSiguiente() != null) {
+                auxiliar.setSiguiente(auxiliar.getSiguiente().getSiguiente());
+            }
+        }
+        
+        tamaño--;
+    }
 }
