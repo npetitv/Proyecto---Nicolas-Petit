@@ -11,9 +11,6 @@ import interfaz.MenuPrincipal;
  */
 public class ProyectoNicolasPetit {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         MenuPrincipal menu = new MenuPrincipal();
         menu.setVisible(true);
