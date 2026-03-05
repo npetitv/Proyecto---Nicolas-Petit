@@ -9,7 +9,6 @@ public class Proteina {
 
     public Proteina(String nombre) {
         this.nombre = nombre;
-        // Inicializamos nuestra lista personalizada vacía
         this.interacciones = new Lista<>(); 
     }
 

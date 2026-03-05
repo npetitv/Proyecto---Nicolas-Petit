@@ -3,10 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package proyecto.nicolas.petit;
+import interfaz.MenuPrincipal;
 
 /**
  *
- * @author Petit
+ * @author Petits
  */
 public class ProyectoNicolasPetit {
 
@@ -14,7 +15,7 @@ public class ProyectoNicolasPetit {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-    }
-    
+        MenuPrincipal menu = new MenuPrincipal();
+        menu.setVisible(true);
+}
 }

@@ -37,10 +37,33 @@ public class VentanaActualizar extends JFrame {
                 JOptionPane.showMessageDialog(this, "Datos inválidos.");
             }
         });
+        
+        JButton btnDeleteProteina = new JButton("Eliminar Proteína");
+        btnDeleteProteina.addActionListener(e -> {
+            String nombre = JOptionPane.showInputDialog(this, "Nombre de la proteína a eliminar:");
+            if (nombre != null && !nombre.trim().isEmpty()) {
+                grafo.eliminarProteina(nombre.trim());
+                JOptionPane.showMessageDialog(this, "Proteína eliminada.");
+            }
+        });
+
+        JButton btnDeleteEnlace = new JButton("Eliminar Interacción (Arista)");
+        btnDeleteEnlace.addActionListener(e -> {
+            String p1 = JOptionPane.showInputDialog(this, "Proteína origen:");
+            String p2 = JOptionPane.showInputDialog(this, "Proteína destino:");
+            if (p1 != null && p2 != null) {
+                grafo.eliminarInteraccion(p1, p2);
+                JOptionPane.showMessageDialog(this, "Interacción eliminada.");
+            }
+        });
 
         add(new JLabel("Gestión de Datos", SwingConstants.CENTER));
         add(btnAddProteina);
+        add(btnAddEnlace);add(new JLabel("Gestión de Datos", SwingConstants.CENTER));
+        add(btnAddProteina);
+        add(btnDeleteProteina); 
         add(btnAddEnlace);
+        add(btnDeleteEnlace);   
         
         JButton btnVolver = new JButton("Volver al Menú");
         btnVolver.addActionListener(e -> dispose());
