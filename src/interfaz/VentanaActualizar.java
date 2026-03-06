@@ -18,9 +18,9 @@ public class VentanaActualizar extends JFrame {
     public VentanaActualizar(Grafo grafo) {
         this.grafo = grafo;
         setTitle("Actualizar Repositorio");
-        setSize(400, 300);
+        setSize(400, 350);
         setLocationRelativeTo(null);
-        setLayout(new GridLayout(4, 1, 10, 10));
+        setLayout(new GridLayout(0, 1, 10, 10));
 
         JButton btnAddProteina = new JButton("Agregar Nueva Proteína");
         btnAddProteina.addActionListener(e -> {
@@ -65,8 +65,6 @@ public class VentanaActualizar extends JFrame {
         });
 
         add(new JLabel("Gestión de Datos", SwingConstants.CENTER));
-        add(btnAddProteina);
-        add(btnAddEnlace);add(new JLabel("Gestión de Datos", SwingConstants.CENTER));
         add(btnAddProteina);
         add(btnDeleteProteina); 
         add(btnAddEnlace);

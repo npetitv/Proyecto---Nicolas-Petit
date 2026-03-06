@@ -24,7 +24,7 @@ public class MenuPrincipal extends JFrame {
         
         // Configuración básica de la ventana
         setTitle("Analizador de Redes Proteicas - Nicolas Petit");
-        setSize(400, 350); 
+        setSize(400, 260); 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
         setLocationRelativeTo(null); 
         setLayout(new BorderLayout(10, 10)); 
@@ -34,7 +34,8 @@ public class MenuPrincipal extends JFrame {
         add(lblTitulo, BorderLayout.NORTH);
         
         JPanel panelBotones = new JPanel();
-        panelBotones.setLayout(new GridLayout(5, 1, 10, 10)); 
+        panelBotones.setLayout(new GridLayout(4, 1, 10, 10)); 
+        panelBotones.setBorder(BorderFactory.createEmptyBorder(0, 20, 20, 20));
         
         JButton btnCargar = new JButton("1. Cargar Grafo desde archivo (CSV)");
         JButton btnMostrar = new JButton("2. Mostrar Grafo (Visual)");
