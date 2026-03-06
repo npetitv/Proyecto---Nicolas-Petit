@@ -23,7 +23,7 @@ public class VentanaRutas extends JFrame {
         setTitle("Cálculo de Rutas y Recorridos");
         setSize(400, 300);
         setLocationRelativeTo(null);
-        setLayout(new GridLayout(6, 1, 10, 10));
+        setLayout(new BorderLayout());
         
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new GridLayout(6, 1, 10, 10));
@@ -50,6 +50,6 @@ public class VentanaRutas extends JFrame {
         panelPrincipal.add(btnDijkstra);
         panelPrincipal.add(btnBFS);
         
-        add(panelPrincipal);
+        add(panelPrincipal, BorderLayout.CENTER);
     }
 }
