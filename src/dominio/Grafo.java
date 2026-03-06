@@ -5,7 +5,7 @@ import estructuras.NodoLista;
 
 /**
  * Clase que representa la estructura principal del grafo.
- * Administra los vértices (proteínas) y sus aristas (interacciones).
+ * Administra los vértices y sus aristas ).
  */
 public class Grafo {
     

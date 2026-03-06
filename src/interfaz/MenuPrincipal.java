@@ -22,7 +22,7 @@ public class MenuPrincipal extends JFrame {
         this.grafoSistema = new Grafo();
         this.manejador = new ManejadorArchivos();
         
-        // 1. Configuración básica de la ventana
+        // Configuración básica de la ventana
         setTitle("Analizador de Redes Proteicas - Nicolas Petit");
         setSize(400, 350); 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
