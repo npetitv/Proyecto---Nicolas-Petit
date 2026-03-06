@@ -8,8 +8,16 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+/**
+ * Clase responsable de la persistencia y carga de datos.
+ * Gestiona la lectura de archivos externos (CSV)
+ */
 public class ManejadorArchivos {
     
+    /**
+     * Abre un selector de archivos para que el usuario elija un CSV.
+     * Lee el contenido línea por línea y construye el grafo correspondiente.
+     */
     public Grafo cargarGrafoDesdeCSV() {
         Grafo grafo = new Grafo(); 
         

@@ -7,11 +7,17 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Clase que representa la ventana principal de la interfaz gráfica del sistema.
+ */
 public class MenuPrincipal extends JFrame {
     
     private Grafo grafoSistema;
     private final ManejadorArchivos manejador;
-
+    
+    /**
+     * Constructor que inicializa la ventana principal.
+     */
     public MenuPrincipal() {
         this.grafoSistema = new Grafo();
         this.manejador = new ManejadorArchivos();
@@ -42,6 +48,7 @@ public class MenuPrincipal extends JFrame {
         
         add(panelBotones, BorderLayout.CENTER);
         
+        // Evento para cargar el grafo desde un archivo
         btnCargar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -57,6 +64,7 @@ public class MenuPrincipal extends JFrame {
             }
         });
         
+        // Evento para abrir la ventana de actualización de datos
         btnActualizar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -65,6 +73,7 @@ public class MenuPrincipal extends JFrame {
             }
         });
         
+        // Evento para abrir la visualización gráfica del grafo
         btnMostrar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -80,6 +89,7 @@ public class MenuPrincipal extends JFrame {
             }
         });
         
+        // Evento para abrir la ventana de cálculo de rutas
         btnRutas.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -93,7 +103,10 @@ public class MenuPrincipal extends JFrame {
         });
         
     }
-
+    
+    /**
+     * Método principal que arranca la aplicación.
+     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             @Override

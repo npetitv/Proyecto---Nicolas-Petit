@@ -7,15 +7,23 @@ import estructuras.Lista;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Clase encargada de la representación gráfica del grafo en pantalla.
+ */
 public class PanelGrafo extends JPanel {
     private Grafo grafo;
-
+    
+    /**
+     * Constructor que recibe el grafo cargado en memoria para ser dibujado..
+     */
     public PanelGrafo(Grafo grafo) {
         this.grafo = grafo;
         this.setBackground(Color.WHITE);
     }
 
-    @Override
+    /**
+     * Método principal de renderizado que se ejecuta automáticamente al mostrar el panel.
+     */
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;

@@ -5,10 +5,19 @@ import utilidades.Algoritmos;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Ventana encargada de la ejecución de algoritmos de búsqueda y rutas.
+ * Permite seleccionar proteínas de origen y destino para aplicar 
+ * BFS, DFS o Dijkstra y visualizar el resultado.
+ */
 public class VentanaRutas extends JFrame {
     private Grafo grafo;
     private Algoritmos alg = new Algoritmos();
-
+    
+    /**
+     * Constructor que inicializa la interfaz de cálculo de rutas.
+     * Configura los selectores de proteínas y los botones de ejecución.
+     */
     public VentanaRutas(Grafo g) {
         this.grafo = g;
         setTitle("Cálculo de Rutas y Recorridos");

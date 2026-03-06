@@ -4,8 +4,14 @@ import dominio.*;
 import estructuras.Lista;
 import javax.swing.JOptionPane;
 
+/**
+ * Clase que centraliza la lógica de los algoritmos de búsqueda y recorridos.
+ */
 public class Algoritmos {
-
+    
+    /**
+     * Calcula la ruta más corta entre dos proteínas utilizando el algoritmo de Dijkstra.
+     */
     public void calcularDijkstra(Grafo grafo, String inicio, String fin) {
         Lista<Proteina> todas = grafo.getProteinas();
         Proteina pInicio = grafo.obtenerProteina(inicio);
@@ -51,7 +57,10 @@ public class Algoritmos {
 
         mostrarResultadoDijkstra(predecesores, todas, pFin, distancias[buscarIndice(todas, pFin)]);
     }
-
+    
+    /**
+     * Encuentra el índice del vértice con la distancia mínima que aún no ha sido visitado.
+     */
     private int minDistance(int[] dist, boolean[] visitados, int n) {
         int min = Integer.MAX_VALUE, min_index = -1;
         for (int v = 0; v < n; v++) {
@@ -62,14 +71,20 @@ public class Algoritmos {
         }
         return min_index;
     }
-
+    
+    /**
+     * Busca la posición de una proteína dentro de una lista específica.
+     */
     private int buscarIndice(Lista<Proteina> lista, Proteina p) {
         for (int i = 0; i < lista.getTamaño(); i++) {
             if (lista.obtener(i) == p) return i;
         }
         return -1;
     }
-
+    
+    /**
+     * Reconstruye la ruta desde el destino hacia el origen y muestra los resultados.
+     */
     private void mostrarResultadoDijkstra(Proteina[] pred, Lista<Proteina> lista, Proteina fin, int distTotal) {
         if (distTotal == Integer.MAX_VALUE) {
             JOptionPane.showMessageDialog(null, "No existe conexión entre estas proteínas.");
@@ -85,6 +100,9 @@ public class Algoritmos {
         JOptionPane.showMessageDialog(null, "Ruta Mínima: " + camino + "\nCosto Total: " + distTotal);
     }
     
+    /**
+     * Implementación del recorrido en amplitud BFS.
+     */
     public String recorrerBFS(Grafo grafo, String nombreInicio) {
         Proteina inicio = grafo.obtenerProteina(nombreInicio);
         if (inicio == null) return "La proteína inicial no existe.";

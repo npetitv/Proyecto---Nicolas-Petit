@@ -5,9 +5,16 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
+/**
+ * Ventana secundaria encargada de la gestión de datos del grafo.
+ * Permite agregar, eliminar y gestionar proteinas asi como las interacciones entre ellas.
+ */
 public class VentanaActualizar extends JFrame {
     private Grafo grafo;
-
+    
+    /**
+     * Constructor que inicializa la interfaz de actualización.
+     */
     public VentanaActualizar(Grafo grafo) {
         this.grafo = grafo;
         setTitle("Actualizar Repositorio");
