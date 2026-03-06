@@ -100,7 +100,7 @@ public class MenuPrincipal extends JFrame {
             VentanaRutas v = new VentanaRutas(grafoSistema);
             v.setVisible(true);
             }
-        });
+        });     
         
     }
 }
