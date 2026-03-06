@@ -103,17 +103,4 @@ public class MenuPrincipal extends JFrame {
         });
         
     }
-    
-    /**
-     * Método principal que arranca la aplicación.
-     */
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                MenuPrincipal ventana = new MenuPrincipal();
-                ventana.setVisible(true); 
-            }
-        });
-    }
 }
