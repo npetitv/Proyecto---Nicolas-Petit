@@ -21,9 +21,13 @@ public class VentanaRutas extends JFrame {
     public VentanaRutas(Grafo g) {
         this.grafo = g;
         setTitle("Cálculo de Rutas y Recorridos");
-        setSize(400, 350);
+        setSize(400, 300);
         setLocationRelativeTo(null);
         setLayout(new GridLayout(6, 1, 10, 10));
+        
+        JPanel panelPrincipal = new JPanel();
+        panelPrincipal.setLayout(new GridLayout(6, 1, 10, 10));
+        panelPrincipal.setBorder(BorderFactory.createEmptyBorder(10, 20, 20, 20));
 
         JTextField txtOrigen = new JTextField("P1");
         JTextField txtDestino = new JTextField("P5");
@@ -39,11 +43,13 @@ public class VentanaRutas extends JFrame {
             JOptionPane.showMessageDialog(this, res);
         }); 
 
-        add(new JLabel("Proteína Origen:", SwingConstants.CENTER));
-        add(txtOrigen);
-        add(new JLabel("Proteína Destino (solo para Dijkstra):", SwingConstants.CENTER));
-        add(txtDestino);
-        add(btnDijkstra);
-        add(btnBFS);
+        panelPrincipal.add(new JLabel("Proteína Origen:", SwingConstants.CENTER));
+        panelPrincipal.add(txtOrigen);
+        panelPrincipal.add(new JLabel("Proteína Destino (solo para Dijkstra):", SwingConstants.CENTER));
+        panelPrincipal.add(txtDestino);
+        panelPrincipal.add(btnDijkstra);
+        panelPrincipal.add(btnBFS);
+        
+        add(panelPrincipal);
     }
 }
